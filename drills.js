@@ -19,3 +19,14 @@ function beyond(num){
     console.log('To infinity');
   }
 }
+
+function decode(str){
+  let words = str.toLowerCase().split(/[ ,!.";:-]+/).filter(Boolean);
+  return words.map(word => {
+    let choice = word.charCodeAt(0) - "a".charCodeAt(0) + 1; 
+    if (choice < 1 || choice > 4) return ' ';
+    return word.charAt(choice)
+  }).join('');
+}
+
+console.log(decode('craft block argon meter bells brown croon droop'));
