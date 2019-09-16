@@ -62,3 +62,49 @@ function numberDays(month, leapYear = false){
 }
 
 //console.log(numberDays('Splarch'));
+
+function rps(choice){
+  if (choice !== 1 && choice !== 2 && choice !== 3){
+    throw new Error('Input must be 1 for rock, 2 for paper, or 3 for scissors');
+  }
+  const compChoice = Math.floor(Math.random() * 3) + 1;
+  const options = ['','rock','paper','scissors'];
+  console.log(`You played ${options[choice]}, computer played ${options[compChoice]}`);
+
+  switch(choice){
+    case 1:
+      switch(compChoice){
+        case 1:
+          return 'Tie';
+        case 2:
+          return 'You lose';
+        case 3:
+          return 'You win';
+      }
+    case 2:
+      switch(compChoice){
+        case 1:
+          return 'You win';
+        case 2:
+          return 'Tie';
+        case 3:
+          return 'You lose';
+      }
+    case 3:
+      switch(compChoice){
+        case 1:
+          return 'You lose';
+        case 2:
+          return 'You win';
+        case 3:
+          return 'Tie';
+      }
+  }
+}
+
+console.log(rps(1));
+console.log(rps(2));
+console.log(rps(3));
+console.log(rps(1));
+console.log(rps(2));
+console.log(rps(3));
