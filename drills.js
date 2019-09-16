@@ -29,4 +29,36 @@ function decode(str){
   }).join('');
 }
 
-console.log(decode('craft block argon meter bells brown croon droop'));
+//console.log(decode('craft block argon meter bells brown croon droop'));
+
+
+function numberDays(month, leapYear = false){
+  let result;
+  switch(month) {
+    case 'January':
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':
+    case 'October':
+    case 'December':
+      result = `${month} has 31 days.`
+      break;
+    case 'April':
+    case 'June':
+    case 'September':
+    case 'November':
+      result = `${month} has 30 days.`
+      break;
+    case 'February':
+      result = `February has ${leapYear ? 29 : 28} days.`
+      break;  
+    default:
+      throw new Error('Must provide a valid month');
+    }
+  
+
+  return result;
+}
+
+//console.log(numberDays('Splarch'));
